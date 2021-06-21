@@ -15,6 +15,7 @@ class Form {
     var title = createElement('h2')
     title.html("Car Racing Game");
     title.position(displayWidth / 2 - 60, displayHeight / 2 - 140);
+   
 
     this.input.position(displayWidth / 2 - 55, displayHeight / 2 - 70);
     this.button.position(displayWidth / 2 + 70, displayHeight / 2 - 40);
@@ -22,6 +23,7 @@ class Form {
     this.button.mousePressed(()=>{
       this.input.hide();
       this.button.hide();
+      title.hide();
       player.name = this.input.value();
       playerCount+=1;
       player.index = playerCount;

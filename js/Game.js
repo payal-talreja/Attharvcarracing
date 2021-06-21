@@ -26,10 +26,10 @@ class Game {
       form = new Form()
       form.display();
     }
-    car1 = createSprite(260, 600);
-    car2 = createSprite(280, 600);
-    car3 = createSprite(300, 600);
-    car4 = createSprite(320, 600);
+    car1 = createSprite(200, 200);
+    car2 = createSprite(400, 200);
+    car3 = createSprite(600, 200);
+    car4 = createSprite(800, 200);
     cars = [car1, car2, car3, car4];
   }
 
@@ -42,8 +42,8 @@ class Game {
       var x = 0;
       var y;
       for(var plr in allPlayers){
-        Index += 1;
-        x += 20;
+        Index =Index + 1;
+        x =x + 200;
         y = displayHeight - allPlayers[plr].distance;
         cars[Index-1].position.x = x;
         cars[Index-1].position.y = y;
@@ -54,8 +54,9 @@ class Game {
     }
 
     if(keyIsDown(UP_ARROW) && player.index !== null){
-      player.distance +=50
+      player.distance +=10
       player.update();
     }
+    drawSprites();
   }
 }
